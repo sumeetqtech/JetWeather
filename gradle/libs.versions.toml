@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.0"
+agp = "8.7.3"
 coilCompose = "1.4.0"
 converterGson = "2.11.0"
 hiltCompiler = "2.51.1"
@@ -14,14 +14,15 @@ kotlinxCoroutinesCore = "1.9.0"
 kotlinxCoroutinesPlayServices = "1.9.0"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
-composeBom = "2024.04.01"
+composeBom = "2024.12.01"
 okhttp = "5.0.0-alpha.2"
 retrofit = "2.11.0"
 roomRuntime = "2.6.1"
-navigationCompose = "2.8.4"
+navigationCompose = "2.8.5"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationFragment" }
 androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "hiltNavigationFragment" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
@@ -55,4 +56,5 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-kapt = { id = "kotlin-kapt" }
 

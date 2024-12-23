@@ -1,4 +1,4 @@
-package com.compose.weatherforecast.screens.splash
+package com.compose.weatherforecast.ui.screens.splash
 
 import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.Animatable
@@ -6,7 +6,9 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -46,32 +48,37 @@ fun SplashScreen(navController: NavController) {
         navController.navigate(WeatherScreens.MainScreen.name)
     })
 
-    Surface(
-        modifier = Modifier
-            .padding(16.dp)
-            .size(330.dp)
-            .scale(scale.value),
-        shape = CircleShape,
-        color = Color.White,
-        border = BorderStroke(width = 2.dp, color = Color.LightGray)
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
     ) {
-        Column(
-            modifier = Modifier.padding(1.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+        Surface(
+            modifier = Modifier
+                .padding(16.dp)
+                .size(330.dp)
+                .scale(scale.value),
+            shape = CircleShape,
+            color = Color.White,
+            border = BorderStroke(width = 2.dp, color = Color.LightGray)
         ) {
-            Image(
-                painter = painterResource(R.drawable.forecast_splash),
-                contentDescription = "Splash Image",
-                contentScale = ContentScale.Fit,
-                modifier = Modifier.size(96.dp)
-            )
-            Text(
-                modifier = Modifier.padding(top = 8.dp),
-                text = "Find the Sun?",
-                style = MaterialTheme.typography.titleLarge,
-                color = Color.LightGray
-            )
+            Column(
+                modifier = Modifier.padding(1.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.forecast_splash),
+                    contentDescription = "Splash Image",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(96.dp)
+                )
+                Text(
+                    modifier = Modifier.padding(top = 8.dp),
+                    text = "Find the Sun?",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = Color.LightGray
+                )
+            }
         }
     }
 }

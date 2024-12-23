@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.kapt)
     id("com.google.dagger.hilt.android")
 }
 
@@ -61,9 +61,12 @@ dependencies {
 
     //dagger hilt
     implementation(libs.hilt.android)
-    implementation(libs.androidx.navigation.compose)
-    ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.fragment)
+    implementation(libs.androidx.hilt.navigation.compose)
+    kapt(libs.hilt.compiler)
+
+    //navigation-compose
+    implementation(libs.androidx.navigation.compose)
 
     // Coil
     implementation(libs.coil.compose)
@@ -89,7 +92,6 @@ dependencies {
 
     //Room
     implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 }
 java {

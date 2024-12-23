@@ -1,4 +1,4 @@
-package com.compose.weatherforecast.screens.search
+package com.compose.weatherforecast.ui.screens.search
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController

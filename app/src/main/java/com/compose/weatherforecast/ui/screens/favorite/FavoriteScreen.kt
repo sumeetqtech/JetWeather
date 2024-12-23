@@ -1,4 +1,4 @@
-package com.compose.weatherforecast.screens.favorite
+package com.compose.weatherforecast.ui.screens.favorite
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController

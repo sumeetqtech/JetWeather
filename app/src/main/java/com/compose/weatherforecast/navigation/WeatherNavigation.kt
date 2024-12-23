@@ -2,13 +2,15 @@ package com.compose.weatherforecast.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.compose.weatherforecast.screens.about.AboutScreen
-import com.compose.weatherforecast.screens.main.MainScreen
-import com.compose.weatherforecast.screens.search.SearchScreen
-import com.compose.weatherforecast.screens.splash.SplashScreen
+import com.compose.weatherforecast.ui.screens.about.AboutScreen
+import com.compose.weatherforecast.ui.screens.main.MainScreen
+import com.compose.weatherforecast.ui.screens.main.MainViewModel
+import com.compose.weatherforecast.ui.screens.search.SearchScreen
+import com.compose.weatherforecast.ui.screens.splash.SplashScreen
 
 @Preview
 @Composable
@@ -29,7 +31,8 @@ fun WeatherNavigation() {
             SearchScreen(navController = navController)
         }
         composable(route = WeatherScreens.MainScreen.name) {
-            MainScreen(navController = navController)
+            val mainViewModel: MainViewModel = hiltViewModel<MainViewModel>()
+            MainScreen(navController = navController, mainViewModel, "Mumbai")
         }
     }
 }
